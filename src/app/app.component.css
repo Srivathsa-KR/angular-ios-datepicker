@@ -1,0 +1,19 @@
+.center {
+  text-align: center;
+  font: 16px "Roboto", sans-serif;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 16px;
+}
+.center .date {
+  font-size: 30px;
+  font-weight: 300;
+}

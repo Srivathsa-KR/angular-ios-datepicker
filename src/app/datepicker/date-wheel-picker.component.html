@@ -1,0 +1,9 @@
+<div class="date-wheel-picker">
+	<app-ios-wheel-picker [dataList]="daysList" [indexOfSelected]="daysList.indexOf(selectedDate.getDate())"
+		(onChange)="onDayChange($event)" [defaultSetting]="defaultSetting"></app-ios-wheel-picker>
+	<app-ios-wheel-picker [dataList]="MONTH_LIST"
+		[indexOfSelected]="MONTH_LIST.indexOf(DEFAULT_MONTHS[selectedDate.getMonth()])"
+		(onChange)="onMonthChange($event)" [defaultSetting]="defaultSetting"></app-ios-wheel-picker>
+	<app-ios-wheel-picker [dataList]="YEAR_LIST" [indexOfSelected]="YEAR_LIST.indexOf(selectedDate.getFullYear())"
+		(onChange)="onYearChange($event)" [defaultSetting]="defaultSetting"></app-ios-wheel-picker>
+</div>

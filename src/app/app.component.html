@@ -1,0 +1,7 @@
+<div class="center" id="app">
+	<div class='date'>
+		{{date.getDate()}} {{ MONTH_LIST[date.getMonth()] }} {{date.getFullYear() }}
+	</div>
+	<app-date-wheel-picker [date]="date" (onDateSelected)="onDateSelected($event)" [allowedDates]="'FUTURE_DATES'">
+	</app-date-wheel-picker>
+</div>

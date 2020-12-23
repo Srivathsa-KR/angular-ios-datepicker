@@ -1,0 +1,47 @@
+.year {
+  position: relative;
+  height: 50px;
+  margin: 0px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0;
+}
+.year:before,
+.year:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 80px;
+  height: 50px;
+  background-color: #fff;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.year:before {
+  top: -51px;
+}
+
+.year:after {
+  bottom: -51px;
+}
+
+.year .handle {
+  will-change: transform;
+}
+
+.year li {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

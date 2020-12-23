@@ -1,0 +1,20 @@
+/* Add application styles & imports to this file! */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* body,
+  html {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 12px;
+  } */
+body {
+  padding: 16px;
+}

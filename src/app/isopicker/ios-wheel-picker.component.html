@@ -1,0 +1,7 @@
+<div class='dragdealer year'>
+	<ul #listContainer class='handle' [ngStyle]="inlineListStyle">
+		<ng-container *ngFor="let item of dataList; let index=index;trackBy:trackByIndex">
+			<li>{{item}}</li>
+		</ng-container>
+	</ul>
+</div>
