@@ -155,29 +155,13 @@ export class IosWheelPickerComponent implements OnInit, OnChanges {
   }
 
   private handleIndexOfSelectedChange(indexOfSelected: number): void {
-    let computedPosition;
-    let positionToBeSet;
     if (indexOfSelected === -1) {
       //Item not in the array
-      computedPosition = this.getDefaultPosition(this.defaultSetting);
-      positionToBeSet = Math.max(
-        this.maxPossiblePosition,
-        Math.min(0, computedPosition)
-      );
-      this.changeEmitter.emit((-1 * positionToBeSet) / LIST_ITEM_HEIGHT);
+      const defaultIndex = this.getDefaultIndex(this.defaultSetting);
+      this.changeEmitter.emit(defaultIndex);
     } else {
-      computedPosition = this.indexOfSelected
-        ? computeSelectedItemPosition(indexOfSelected)
-        : 0;
-      positionToBeSet = Math.max(
-        this.maxPossiblePosition,
-        Math.min(0, computedPosition)
-      );
-      this.currentPosition = positionToBeSet;
-      this.inlineListStyle = this.getScrollAnimationStyle(
-        this.offset,
-        this.currentPosition
-      );
+      this.currentPosition = this.indexOfSelected ? computeSelectedItemPosition(indexOfSelected) : 0;
+      this.inlineListStyle = this.getScrollAnimationStyle(this.offset, this.currentPosition);
     }
   }
 
@@ -189,9 +173,9 @@ export class IosWheelPickerComponent implements OnInit, OnChanges {
     return style;
   }
 
-  private getDefaultPosition(defaultSetting: DEFAULT_SETTING): number {
+  private getDefaultIndex(defaultSetting: DEFAULT_SETTING): number {
     if (defaultSetting === DEFAULT_SETTING_ENUM.DEFAULT_TO_END) {
-      return this.maxPossiblePosition;
+      return this.dataList.length - 1;
     } else if (defaultSetting === DEFAULT_SETTING_ENUM.DEFAULT_TO_START) {
       return 0;
     }
